@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exchange Corner - StudentMart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, white);
+      background-size: 400% 400%;
+      animation: backgroundMove 15s ease infinite;
+      padding: 40px 20px;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+     header {
+      text-align: center;
+      margin-bottom: 40px;
+      color:#022a53;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Back to Home button */
+    .btn-home {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: #c7ebe3;
+      color: #022a53;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+      padding: 8px 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .btn-home:hover {
+      background: #c7ebe3;
+    }
+  
+    .cards {
+      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 4 cards per row */
+      gap: 78px; /* spacing between cards */
+      padding: 30px 50px;
+    }
+    .card {
+      width: 400px;
+      background:#c7ebe3;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      animation: fadeUp 1s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin: 15px;
+      font-size: 25px;
+      color: #022a53;
+    }
+    .card p {
+      margin: 0 15px 10px;
+      color: #022a53;
+      font-size: 14px;
+    }
+
+    .card button{
+      width: calc(100% - 30px);
+      margin: 0 15px 15px;
+      padding: 10px;
+      background-color: #022a53;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .card button:hover {
+       background-color: #022a53;
+    }
+
+   /* Modal Background */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center; align-items: center;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    /* Inputs */
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      background: #022a53;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: #022a53;
+    }
+
+    /* Close Button */
+    .close {
+      float: right;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Open Button */
+    .open-btn {
+      background:#022a53;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <!-- Back to Home Button -->
+  <a href="home.html" class="btn-home">Back to Home</a>
+  </div>
+<header>
+    <h1>📚 StudentMart</h1>
+    <p>Exchange Your Notes</p>
+</header>
+
+<section class="cards">
+  <div class="card">
+    <img src="df.jpeg" alt="Book 1">
+      <h3>Digital Fundamental </h3>
+      <p>Basic fundamentals with circuit diagram</p>
+      <p>Condition : Good</p>
+      <p>Available for exchange with OOP Notes</p>
+      <button>Request Exchange</button>
+  </div>
+
+
+
+
+  <div class="card">
+    <img src="oopex.jpeg" width="350" alt="Exchange books">
+    <h3>Object Oriented Programming </h3>
+    <p>Oops Concept</p>
+    <p>Condition :Used</p>
+    <p>Available for free exchange</p>
+    <button>Request Exchange</button>
+  </div>
+
+
+
+
+  <div class="card">
+    <img src="maths ex.jpeg" width="350" alt="Exchange books">
+    <h3>Discrete Mathematics</h3>
+    <p>Math application | graph theory</p>
+    <p>Condition : New</p>
+    <p>Available for exchange with Machine Learning Notes</p>
+    <button>Request Exchange</button>
+  </div>
+
+
+
+
+  <div class="card">
+    <img src="phy.jpeg" width="350" alt="Exchange books">
+    <h3>Physics</h3>
+    <p>NEET Preparation | Advance Concepts</p>
+    <p>Condition : Used</p>
+    <p>Available for exchange with BME Notes</p>
+    <button>Request Exchange</button>
+  </div>
+
+
+
+
+  <div class="card">
+    <img src="zoology.jpeg" width="350" alt="Exchange books">
+    <h3>Fundamental Zoology</h3>
+    <p>GATE Preparation | Concepts with illustrative graphics</p>
+    <p>Condition : New</p>
+    <p>Available for exchange with Chemistry Notes</p>
+    <button>Request Exchange</button>
+  </div>
+
+
+
+  <div class="card">
+    <img src="ml.jpeg" width="375" alt="Exchange books">
+    <h3>Machine Learning</h3>
+    <p>Fundamental of ML | Application & Algorithms</p>
+    <p>Condition : Good</p>
+    <p>Available for free exchange</p>
+    <button>Request Exchange</button>
+  </div>
+
+
+
+   <div class="card">
+    <img src="mechanical.jpeg" width="350" alt="Exchange books">
+    <h3>Basic Mechanical Engineering</h3>
+    <p>Useful for Competitive exams | B.Tech Students</p>
+    <p>Condition : Good</p>
+    <p>Available for exchange with Discrete Mathematics Notes</p>
+    <button>Request Exchange</button>
+  </div>
+
+
+
+  <div class="card">
+    <img src="chemistry.jpeg" width="350" alt="Exchange books">
+    <h3>Chemistry</h3>
+    <p>Problem-solving with unrivaled problem sets</p>
+    <p>Condition : Used</p>
+    <p>Available for free exchange</p>
+    <button>Request Exchange</button>
+  </div>
+
+
+
+</section>
+
+<footer>
+    <!-- Button to Open Modal -->
+    <button id="openModalBtn" class="open-btn">Post a Book</button>
+
+    <!-- Modal Structure -->
+    <div id="bookModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Post Your Book</h2>
+
+        <form>
+          <label for="bookName">Book You Want</label>
+          <input type="text" id="bookName" placeholder="Enter book name" required>
+
+          <label for="bookName">Book  You're Giving</label>
+          <input type="text" id="publishYear" placeholder="Enter exchange book name" required>
+
+          <label for="condition">Book's Condition</label>
+          <input type="text" id="book'scondition" placeholder="New/Used" required>
+
+
+          <label for="uploadFile">Upload Book Image/PDF</label>
+          <input type="file" id="uploadFile" required>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script at END so DOM loads first -->
+  <script>
+    // Get modal elements
+     const modal = document.getElementById("bookModal"); //find element with id bookModel and store it in the variable
+    const openBtn = document.getElementById("openModalBtn"); // find button with d openModalButton and store it in open btn
+    const closeBtn = document.querySelector(".close");// finds 1st element with class close and store it in close btn
+
+    // Open Modal
+    openBtn.onclick = () => modal.style.display = "flex"; // open modal
+
+    // Close Modal
+    closeBtn.onclick = () => modal.style.display = "none"; // close modal
+
+    // Close on Outside Click
+    window.onclick = (e) => {
+      if (e.target == modal) modal.style.display = "none"; // click outside modal box is close
+    };
+  </script>
+
+</body>
+</html>
